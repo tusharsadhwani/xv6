@@ -54,6 +54,8 @@ void panic(char*);
 struct cmd *parsecmd(char*);
 
 // Execute cmd.  Never returns.
+// Adding this to suppress the infinite recursion error during compile.
+__attribute__((noreturn))
 void
 runcmd(struct cmd *cmd)
 {
